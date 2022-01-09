@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-summary
+---
+
+<h1>{{name}}</h1>
+
+<ul class="postlist">
+{% for post in collections.all %}
+  <li class="postlist-item">
+    {%- set show_tag %}false{% endset -%}
+    {% for tag in post.data.tags %}
+          {% if tag == current_tag %}
+            <a href="{{ post.url | url }}" class="postlist-link">
+                {% if post.data.name %}
+                    {{ post.data.name | upper }}
+                {% else %}
+                    <code>{{ post.url }}</code>
+                {% endif %}
+            </a>
+         {% endif %}
+    {% endfor %}
+  </li>
+{% endfor %}
+</ul>
+

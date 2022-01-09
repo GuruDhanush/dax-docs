@@ -1,0 +1,12 @@
+---
+layout: layouts/home.njk
+---
+
+<div style="margin: 10px 0px 20px 0px" > View DAX Documentation by category </div>
+
+{% for tag in collections.tagList %}
+  {% set tagUrl %}/docs/{{ tag | slug }}/summary{% endset %}
+    <a href="{{ tagUrl | url }}" class="postlist-link">
+      {{ tag | upper }}
+    </a>
+{% endfor %}
