@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAX Docs</title>
+    <meta name="description" content="For writing documentation related to DAX Docs">
+    <link rel="stylesheet" href="/dax-docs/css/index.css">
+    <link rel="stylesheet" href="/dax-docs/css/prism-base16-monokai.dark.css">
+  </head>
+  <body>
+    <header>
+      <h1 class="home"><a href="/dax-docs/">DAX Docs</a></h1>
+      <ul class="nav">
+        <li class="nav-item"><a href="/dax-docs/docs/aggregation/summary/">Aggregation</a></li>
+      </ul>
+    </header>
+
+    <main  class="tmpl-post">
+      <h1>Average</h1>
+
+<time datetime="Invalid DateTime">10 Jan 2022</time><a href="/dax-docs/tags/aggregation/" class="post-tag">Aggregation</a>
+
+<div style="margin:15px 0px" >
+Returns average of all the numbers in column.
+</div>
+
+<h2 id="parameter">Parameters</h2><div>column -> Column</div> 
+<div>The column for which average needs to be calculated </div>
+
+<h2>Returns</h2>
+<div> Type: decimal </div>
+<div> Returns decimal value which is mean of all numbers from column </div>
+
+<h2>Details</h2>
+<ul>
+<li>Returns blank if column contains text.</li>
+<li>Zeroes are counted toward average count but blank values are ignored.</li>
+</ul>
+
+
+
+<h2>Examples</h2><div>The following formula returns average of CurrentSalaray from Employee table.
+</div> 
+<code>= AVERAGE(Employee[CurrentSalary]) </code>
+
+<h2>Related</h2>
+<ul>
+            <li> <a href="/dax-docs/docs/aggregation/averagea/">averagea</a></li>
+      
+</ul>
+
+
+
+
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /dax-docs/docs/aggregation/average/ -->
+  </body>
+</html>
