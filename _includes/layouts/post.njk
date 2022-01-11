@@ -16,8 +16,10 @@ templateClass: tmpl-post
 
 <h2 id="parameter">Parameters</h2>
 {%- for param in parameters -%}
-<div>{{ param.name }} -> {{ param.datatype }}</div> 
-<div>{{ param.definition }} </div>
+<div style="margin: 10px 0px" >
+  <div>{{ param.name }} -> {{ param.datatype }}</div> 
+  <div>{{ param.definition }} </div>
+</div>
 {%- endfor %}
 
 <h2>Returns</h2>
@@ -34,16 +36,18 @@ templateClass: tmpl-post
 <code>{{ example.code }} </code>
 {%- endfor %}
 
-<h2>Related</h2>
-<ul>
-  {%- for rel in related -%}
-    {%- for post in collections.all -%}
-      {% if rel == post.data.name | lower %}
-            <li> <a href="{{ post.url | url }}">{{ rel }}</a></li>
-      {% endif %}
+{%- if related.length > 0 %}
+  <h2>Related</h2>
+  <ul>
+    {%- for rel in related -%}
+      {%- for post in collections.all -%}
+        {% if rel == post.data.name | lower %}
+              <li> <a href="{{ post.url | url }}">{{ rel }}</a></li>
+        {% endif %}
+      {%- endfor %}
     {%- endfor %}
-  {%- endfor %}
-</ul>
+  </ul>
+{% endif %}
 
 
 {# {%- if collections.posts %}
