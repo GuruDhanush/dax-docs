@@ -7,26 +7,39 @@
     <meta name="description" content="For writing documentation related to DAX Docs">
     <link rel="stylesheet" href="/dax-docs/css/index.css">
     <link rel="stylesheet" href="/dax-docs/css/prism-base16-monokai.dark.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/dax-docs/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/dax-docs/img/favicon-32x32.png">
+    <link rel="manifest" href="/dax-docs/misc/site.webmanifest?v=1">
+    <link rel="mask-icon" href="/dax-docs/img/safari-pinned-tab.svg?v=1" color="#ffde03">
+    <link rel="shortcut icon" href="/dax-docs/img/favicon.ico?v=1">
+    <meta name="apple-mobile-web-app-title" content="DAX Docs">
+    <meta name="application-name" content="DAX Docs">
+    <meta name="msapplication-TileColor" content="#ffde03">
+    <meta name="msapplication-config" content="/dax-docs/misc/browserconfig.xml?v=1 ">
+    <meta name="theme-color" content="#ffde03">
   </head>
   <body>
     <header>
       <h1 class="home"><a href="/dax-docs/">DAX Docs</a></h1>
       <ul class="nav">
         <li class="nav-item"><a href="/dax-docs/docs/aggregation/summary/">Aggregation</a></li>
+        <li class="nav-item"><a href="/dax-docs/docs/table/summary/">Table</a></li>
       </ul>
     </header>
 
     <main  class="tmpl-post">
       <h1>Average</h1>
 
-<time datetime="Invalid DateTime">10 Jan 2022</time><a href="/dax-docs/tags/aggregation/" class="post-tag">Aggregation</a>
+<time datetime="Invalid DateTime">11 Jan 2022</time><a href="/dax-docs/tags/aggregation/" class="post-tag">Aggregation</a>
 
 <div style="margin:15px 0px" >
 Returns average of all the numbers in column.
 </div>
 
-<h2 id="parameter">Parameters</h2><div>column -> Column</div> 
-<div>The column for which average needs to be calculated </div>
+<h2 id="parameter">Parameters</h2><div style="margin: 10px 0px" >
+  <div>column -> Column</div> 
+  <div>The column for which average needs to be calculated </div>
+</div>
 
 <h2>Returns</h2>
 <div> Type: decimal </div>
@@ -43,12 +56,12 @@ Returns average of all the numbers in column.
 <h2>Examples</h2><div>The following formula returns average of CurrentSalaray from Employee table.
 </div> 
 <code>= AVERAGE(Employee[CurrentSalary]) </code>
+  <h2>Related</h2>
+  <ul>
+              <li> <a href="/dax-docs/docs/aggregation/averagea/">averagea</a></li>
+        
+  </ul>
 
-<h2>Related</h2>
-<ul>
-            <li> <a href="/dax-docs/docs/aggregation/averagea/">averagea</a></li>
-      
-</ul>
 
 
 
