@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
-    {# <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}"> #}
+    {%- if metadata.env != 'development' %}
+      <meta http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; manifest-src 'self'">
+    {%- endif %}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/apple-touch-icon.png' | url }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/img/favicon-32x32.png' | url }}">
     <link rel="manifest" href="{{ '/misc/site.webmanifest?v=1' | url }}">
