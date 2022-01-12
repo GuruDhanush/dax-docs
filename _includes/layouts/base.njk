@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title or metadata.title }}</title>
     <meta name="description" content="{{ description or metadata.description }}">
-    <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
-    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
+    {# <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
+    <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}"> #}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ '/img/apple-touch-icon.png' | url }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/img/favicon-32x32.png' | url }}">
     <link rel="manifest" href="{{ '/misc/site.webmanifest?v=1' | url }}">
@@ -19,6 +19,13 @@
     <meta name="theme-color" content="#ffde03">
   </head>
   <body>
+    {% set css %}
+      {% include "css/index.css" %}
+      {% include "css/prism-base16-monokai.dark.css" %}
+    {% endset %}
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
     <header>
       <h1 class="home"><a href="{{ '/' | url }}">{{ metadata.title }}</a></h1>
 
