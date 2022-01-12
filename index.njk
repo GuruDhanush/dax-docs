@@ -4,9 +4,13 @@ layout: layouts/home.njk
 
 <div style="margin: 10px 0px 20px 0px" > View DAX Documentation by category </div>
 
+<ul style="list-style: none; padding: 10px" >
 {% for tag in collections.tagList %}
   {% set tagUrl %}/docs/{{ tag | slug }}/summary{% endset %}
-    <a href="{{ tagUrl | url }}" class="postlist-link">
-      {{ tag | upper }}
-    </a>
+    <li style="margin: 10px 0px"> 
+      <a href="{{ tagUrl | url }}" class="postlist-link">
+        {{ tag | upper }}
+      </a>
+    </li>
 {% endfor %}
+</ul>
