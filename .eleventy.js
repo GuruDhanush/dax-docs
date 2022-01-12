@@ -45,6 +45,15 @@ module.exports = function(eleventyConfig) {
     return Math.min.apply(null, numbers);
   });
 
+    // Return the smallest number argument
+  eleventyConfig.addFilter("trimdot", (data) => {
+      while(data.charAt(0) === '.')
+      {
+        data = data.substring(1);
+      }
+      return data.trim();
+  });
+
   function filterTagList(tags) {
     return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
   }

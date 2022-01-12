@@ -41,8 +41,12 @@
       {{ content | safe }}
     </main>
 
-    <footer></footer>
-
-    <!-- Current page: {{ page.url | url }} -->
+    <footer>
+      <span class="leftfooter">
+        <span> © 2022 Guru Dhanush </span>
+        <a href="https://github.com/GuruDhanush/dax-docs/blob/master/{{page.inputPath | trimdot}}" target="_blank" rel="noopener noreferrer" >Edit this page on GitHub</a>
+      </span>
+    <span>Except where otherwise <a href="https://creativecommons.org/policies#license" target="_blank" rel="noopener noreferrer" >noted</a>, content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer" >Creative Commons Attribution 4.0 International license</a>.</span>
+    </footer>
   </body>
 </html>
