@@ -47,7 +47,7 @@ module.exports = function(eleventyConfig) {
 
     // Return the smallest number argument
   eleventyConfig.addFilter("trimdot", (data) => {
-      while(data.charAt(0) === '.')
+      while(data.charAt(0) === '.' || data.charAt(0) === '/')
       {
         data = data.substring(1);
       }
