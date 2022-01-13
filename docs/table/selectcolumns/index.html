@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tagged “Aggregation”</title>
+    <title>DAX Docs</title>
     <meta name="description" content="For writing documentation related to DAX Docs">
       <meta http-equiv="Content-Security-Policy"
       content="default-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; manifest-src 'self'">
@@ -31,34 +31,48 @@
       </ul>
     </header>
 
-    <main  class="tmpl-home">
-      <h1>Tagged “Aggregation”</h1>
+    <main  class="tmpl-post">
+      <h1>SelectColumns</h1>
+
+<time datetime="Invalid DateTime">13 Jan 2022</time><a href="/dax-docs/tags/table/" class="post-tag">Table</a>
+
+<div style="margin:15px 0px" >
+Adds calculated columns to table expression with each column for each pair of name and expression.
+</div>
+
+<h2 id="parameter">Parameters</h2><div style="margin: 10px 0px" >
+  <div>table -> Table</div> 
+  <div>Table or table expression for which columns need to be added. </div>
+</div><div style="margin: 10px 0px" >
+  <div>name -> String</div> 
+  <div>Name of the column to be added. </div>
+</div><div style="margin: 10px 0px" >
+  <div>expression -> </div> 
+  <div>DAX expression that returns a value for each row of passed table. </div>
+</div>
+
+<h2>Returns</h2>
+<div> Type: Table </div>
+<div> Returns table with same rows as passed table but with columns equal to count of name and expressions passed. All the other columns are removed </div>
+
+<h2>Details</h2>
+<ul>
+<li>SELECTCOLUMNS and ADDCOLUMNS has function signature.</li>
+</ul>
 
 
-<ol reversed class="postlist" style="counter-reset: start-from 3">
 
-  <li class="postlist-item">
-    <a href="/dax-docs/docs/aggregation/averagea/" class="postlist-link">AverageA</a>
-    <time class="postlist-date" datetime="2022-01-13">13 Jan 2022</time>
-    
-      
-      <a href="/dax-docs/tags/aggregation/" class="post-tag">Aggregation</a>
-    
-  </li>
-
-  <li class="postlist-item">
-    <a href="/dax-docs/docs/aggregation/average/" class="postlist-link">Average</a>
-    <time class="postlist-date" datetime="2022-01-13">13 Jan 2022</time>
-    
-      
-      <a href="/dax-docs/tags/aggregation/" class="post-tag">Aggregation</a>
-    
-  </li>
-
-</ol>
+<h2>Examples</h2><div>The following formula returns table with &#39;NewColumn&#39; and &#39;NewColumn2&#39; columns. Other columns from Employee are removed.  
+</div> 
+<code>= SELECTCOLUMNS( Employee, &quot;NewColumn&quot;, 1 &quot;NewColumn2&quot;, 2 ) </code>
+  <h2>Related</h2>
+  <ul>
+              <li> <a href="/dax-docs/docs/table/addcolumns/">addcolumns</a></li>
+        
+  </ul>
 
 
-<p>See <a href="/dax-docs/tags/">all tags</a>.</p>
+
 
 
     </main>
@@ -66,7 +80,7 @@
     <footer>
       <span class="leftfooter">
         <span> © 2022 Guru Dhanush </span>
-        <a href="https://github.com/GuruDhanush/dax-docs/blob/master/tags.njk" target="_blank" rel="noopener noreferrer" >Edit this page on GitHub</a>
+        <a href="https://github.com/GuruDhanush/dax-docs/blob/master/docs/table/selectcolumns.md" target="_blank" rel="noopener noreferrer" >Edit this page on GitHub</a>
       </span>
     <span>Except where otherwise <a href="https://creativecommons.org/policies#license" target="_blank" rel="noopener noreferrer" >noted</a>, content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer" >Creative Commons Attribution 4.0 International license</a>.</span>
     </footer>

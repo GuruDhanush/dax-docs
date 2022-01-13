@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tagged “Aggregation”</title>
+    <title>DAX Docs</title>
     <meta name="description" content="For writing documentation related to DAX Docs">
       <meta http-equiv="Content-Security-Policy"
       content="default-src 'none'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; manifest-src 'self'">
@@ -31,34 +31,47 @@
       </ul>
     </header>
 
-    <main  class="tmpl-home">
-      <h1>Tagged “Aggregation”</h1>
+    <main  class="tmpl-post">
+      <h1>TopN</h1>
+
+<time datetime="Invalid DateTime">13 Jan 2022</time><a href="/dax-docs/tags/table/" class="post-tag">Table</a>
+
+<div style="margin:15px 0px" >
+Adds calculated columns to table expression.
+</div>
+
+<h2 id="parameter">Parameters</h2><div style="margin: 10px 0px" >
+  <div>n_value -> Number</div> 
+  <div>Number or DAX expression that returns a number. </div>
+</div><div style="margin: 10px 0px" >
+  <div>table -> Table</div> 
+  <div>Table from which rows need to be pulled. </div>
+</div><div style="margin: 10px 0px" >
+  <div>order_by_expression -> Any</div> 
+  <div>DAX expression that is used to sort the table. </div>
+</div><div style="margin: 10px 0px" >
+  <div>order -> Number</div> 
+  <div>Defines sort order. 0 (default) for descending order and 1 for ascending order. </div>
+</div>
+
+<h2>Returns</h2>
+<div> Type: Table </div>
+<div> Table with n_value rows. </div>
+
+<h2>Details</h2>
+<ul>
+<li>Rows returned by TopN function are not sorted in any order.</li>
+<li>TopN returns empty table if n_value is less than or equal to zero.</li>
+<li>If there is a tie at Nth rows, then all rows under tie are returned. This can lead to return of more than n_value rows.</li>
+</ul>
 
 
-<ol reversed class="postlist" style="counter-reset: start-from 3">
 
-  <li class="postlist-item">
-    <a href="/dax-docs/docs/aggregation/averagea/" class="postlist-link">AverageA</a>
-    <time class="postlist-date" datetime="2022-01-13">13 Jan 2022</time>
-    
-      
-      <a href="/dax-docs/tags/aggregation/" class="post-tag">Aggregation</a>
-    
-  </li>
-
-  <li class="postlist-item">
-    <a href="/dax-docs/docs/aggregation/average/" class="postlist-link">Average</a>
-    <time class="postlist-date" datetime="2022-01-13">13 Jan 2022</time>
-    
-      
-      <a href="/dax-docs/tags/aggregation/" class="post-tag">Aggregation</a>
-    
-  </li>
-
-</ol>
+<h2>Examples</h2><div>The following formula returns table with top 5 employees with highest current salary followed by checking earlier date of joining if there are ties   
+</div> 
+<code>= TOPN( 5 Employee, &quot;CurrentSalaray&quot;, 0 &quot;DateOfJoining&quot;, 1 ) </code>
 
 
-<p>See <a href="/dax-docs/tags/">all tags</a>.</p>
 
 
     </main>
@@ -66,7 +79,7 @@
     <footer>
       <span class="leftfooter">
         <span> © 2022 Guru Dhanush </span>
-        <a href="https://github.com/GuruDhanush/dax-docs/blob/master/tags.njk" target="_blank" rel="noopener noreferrer" >Edit this page on GitHub</a>
+        <a href="https://github.com/GuruDhanush/dax-docs/blob/master/docs/table/topn.md" target="_blank" rel="noopener noreferrer" >Edit this page on GitHub</a>
       </span>
     <span>Except where otherwise <a href="https://creativecommons.org/policies#license" target="_blank" rel="noopener noreferrer" >noted</a>, content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener noreferrer" >Creative Commons Attribution 4.0 International license</a>.</span>
     </footer>
