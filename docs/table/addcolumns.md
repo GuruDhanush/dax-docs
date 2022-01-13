@@ -11,7 +11,7 @@ parameters:
   - name: expression
     definition: DAX expression that returns a value for each row of passed table.
 returnType: Table
-returnDescription: Returns table with new column added
+returnDescription: Returns table with new column added.
 
 examples:
   - code: = ADDCOLUMNS(
@@ -20,7 +20,10 @@ examples:
                 "NewColumn2", 2
                 )
     description: |
-      The following formula returns table with columns of Employee along with 'NewColumn' and 'NewColumn2' columns 
+      The following formula returns table with columns of Employee along with 'NewColumn' and 'NewColumn2' columns.
+
+related:
+  - selectcolumns
 
 eleventyNavigation:
   key: AddColumns
